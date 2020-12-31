@@ -92,4 +92,16 @@ router.post("/login", (req, res) => {
   });
 });
 
+router.get('/register', async (req, res) => {
+  await User.find({}).then((data) => {
+    if (data !== 0) {
+      const email = data.map((email) => email.email)
+      res.status(200).json({ email })
+    } else {
+      res.status(404).json({ err: "there is no user with that email in database" })
+    }
+  });
+});
+
+
 module.exports = router;

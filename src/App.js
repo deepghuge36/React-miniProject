@@ -1,12 +1,18 @@
-import './App.css';
-
-function App() {
-  return (
-    <div>
-
-    </div>
-  );
+import React, { Component } from "react";
+import "./App.css";
+import Navbar from "./components/layout/Navbar";
+// import Landing from "./components/layout/Landing";
+import { Button } from 'reactstrap';
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Navbar />
+        <h2>hi</h2>
+        {/* <Landing /> */}
+        <Button />
+      </div>
+    );
+  }
 }
-
-
 export default App;

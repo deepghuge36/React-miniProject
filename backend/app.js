@@ -28,15 +28,16 @@ app.use(passport.session());
 const start = require('./Routes/Users')
 app.use('/user', start);
 
+//for basic understanding we use normal page for now
 app.get('/', (req, res) => {
   res.send
     ("<h1>please go to <a>http://localhost:8080/user/register</a></h1>")
 })
 
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 4000;
 
-app.listen(PORT, function () {
+app.listen(PORT, () => {
   console.log("i'm running node");
   console.log(`Server Running on ${PORT} or Click on http://localhost:${PORT}`);
 });
