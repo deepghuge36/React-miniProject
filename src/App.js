@@ -1,17 +1,20 @@
 import React, { Component } from "react";
-import "./App.css";
 import Navbar from "./components/layout/Navbar";
-// import Landing from "./components/layout/Landing";
-import { Button } from 'reactstrap';
+import { Route, BrowserRouter as Router } from "react-router-dom";
+import Landing from "./components/layout/Landing";
+import Register from './components/auth/Register';
+import Login from "./components/auth/Login";
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <Router>
         <Navbar />
-        <h2>hi</h2>
-        {/* <Landing /> */}
-        <Button />
-      </div>
+        <div className="App">
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
+        </div>
+      </Router>
     );
   }
 }
